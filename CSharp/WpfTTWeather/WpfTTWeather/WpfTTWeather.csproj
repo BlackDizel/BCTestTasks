@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\AnimationQueue.cs" />
     <Compile Include="Classes\WeatherData.cs" />
     <Compile Include="Classes\WeatherInfo.cs" />
     <Compile Include="Controls\weatherItem.xaml.cs">

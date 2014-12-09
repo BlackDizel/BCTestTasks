@@ -13,9 +13,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="tbDate"  Grid.Row="0" Text="11 Сентября" FontSize="{DynamicResource FontSizeNormal}"/>
-        <TextBox Name="tbTemperature" Grid.Row="1" Text="10" Style="{DynamicResource TextBoxTransparent}"
+        <TextBlock Name="tbDate"  Grid.Row="0"  FontSize="{DynamicResource FontSizeNormal}"/>
+        <TextBox Name="tbTemperature" Grid.Row="1" Style="{DynamicResource TextBoxTransparent}"
                  FontSize="{DynamicResource FontSizeMedium}"
-                 LostFocus="tbToday_LostFocus"/>
+                 LostFocus="tbToday_LostFocus" KeyUp="tbTemperature_KeyUp"/>
     </Grid>
 </UserControl>

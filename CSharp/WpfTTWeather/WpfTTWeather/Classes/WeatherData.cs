@@ -31,7 +31,16 @@ namespace WpfTTWeather.Classes
                     wi = (WeatherInfo[])serializer.Deserialize(stream);
                 }
             }
-            else wi= new WeatherInfo[7];
+            else
+            {
+                wi = new WeatherInfo[7];
+                for (int i = 0; i < wi.Length; ++i)
+                {
+                    wi[i] = new WeatherInfo();
+                    wi[i].Date = DateTime.Now.AddDays(i).ToString("yyyy-MM-dd");
+                }
+            }
+
  
         }
         /// <summary>
@@ -70,6 +79,7 @@ namespace WpfTTWeather.Classes
         
         public void EditData(int index, TextBox tb)
         {
+            if (wi[index] == null) wi[index] = new WeatherInfo();
             var el = wi[index];
             el.IsUserMode = false;
 

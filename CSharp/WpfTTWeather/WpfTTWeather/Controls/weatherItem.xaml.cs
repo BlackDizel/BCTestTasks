@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WpfTTWeather.Classes;
 
 namespace WpfTTWeather.Controls
@@ -36,11 +38,20 @@ namespace WpfTTWeather.Controls
             if (wd != null)
             {
                 if (index == -1)
+                    if (tbDate.Text == "завтра") index = 1;
+                    else
                     for (int i = 0; i < wd.wi.Length; ++i)
-                        if (wd.wi[i].Date == tbDate.Text)
+                        if (DateTime.Parse(wd.wi[i].Date).ToString("dd MMMM") == tbDate.Text)
                             index = i;
                 wd.EditData(index, sender as TextBox);
             }
+        }
+
+        private void tbTemperature_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                tbToday_LostFocus(sender, null);
+         
         }
     }
 }
