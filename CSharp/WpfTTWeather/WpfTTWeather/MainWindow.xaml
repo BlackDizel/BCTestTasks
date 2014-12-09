@@ -1,0 +1,75 @@
+﻿<Window x:Class="WpfTTWeather.MainWindow"
+        xmlns:Controls="clr-namespace:WpfTTWeather.Controls"  
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Weather"
+        ResizeMode="NoResize"
+        Height="220" 
+        Width="550" 
+        >
+    <Grid>
+        <Grid Name="grContainerData" Visibility="Collapsed" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel  HorizontalAlignment="Right"
+                         Orientation="Horizontal">
+
+                <TextBlock  Margin="4,0"
+                            VerticalAlignment="Center"
+                            Text="Moscow" 
+                            FontSize="{DynamicResource FontSizeNormal}"/>
+
+                <Button     Width="32" Height="32"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Content="&#xE117;" FontFamily="/WpfTTWeather;component/Fonts/#Segoe UI Symbol"
+                            Click="btUpdateClick"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1"
+                  Margin="4,0"
+                  Width="150"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+            
+                <TextBlock HorizontalAlignment="Right" FontSize="{DynamicResource FontSizeMedium}" Grid.Row="1" Text="Сегодня"/>
+                <TextBox Style="{DynamicResource TextBoxTransparent}" 
+                         HorizontalAlignment="Right"  
+                         FontSize="{DynamicResource FontSizeLarge}" 
+                         Grid.Row="2" Text="-99.99° С" 
+                         Name="tbToday" 
+                         LostFocus="tbToday_LostFocus"
+                     
+                         />
+        
+            </Grid>
+        
+        
+            <WrapPanel
+                Name="wpDays"
+                Margin="8,0,0,0"
+                Grid.Row="1"
+                Grid.Column="1" Orientation="Horizontal">
+                <Controls:weatherItem />
+                <Controls:weatherItem/>
+                <Controls:weatherItem/>
+                <Controls:weatherItem/>
+                <Controls:weatherItem/>
+                <Controls:weatherItem/>
+
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Window>
