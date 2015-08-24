@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Задачи</string>
+    <string name="action_update">Обновить</string>
+    <string name="title_activity_task">Детали задачи</string>
+
+    <string name="date">дата неизвестна</string>
+    <string name="text">нет заголовка</string>
+    <string name="longtext">нет описания</string>
+    <string name="location">место неизвестно</string>
+
+    <string name="price_task_description">нет описания</string>
+    <string name="price_task_cost">цена не указана</string>
+
+    <string name="toast_downloaded">обновлено</string>
+    <string name="toast_downloading">обновляется</string>
+    <string name="toast_downloading_yet">еще обновляется</string>
+    <string name="toast_downloading_error">ошибка обновления</string>
+
+</resources>

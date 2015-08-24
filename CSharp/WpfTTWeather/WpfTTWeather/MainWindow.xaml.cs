@@ -45,7 +45,19 @@ namespace WpfTTWeather
         private void btUpdateClick(object sender, RoutedEventArgs e)
         {
             aq.AddAnimation(0);
-            wc.DownloadStringAsync(new Uri("http://api.openweathermap.org/data/2.5/forecast/daily?q=Moscow&mode=xml&units=metric&cnt=7", UriKind.Absolute));
+            try
+            {
+
+                wc.DownloadStringAsync(new Uri("http://api.openweathermap.org/data/2.5/forecast/daily?q=Moscow&mode=xml&units=metric&cnt=7", UriKind.Absolute));
+            }
+            catch
+            {
+                Debug.WriteLine("download error");
+
+                tbError.Visibility = Visibility.Visible;
+                UpdateUI();
+            
+            }
         }
 
         /// <summary>
@@ -56,6 +68,7 @@ namespace WpfTTWeather
         void wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
             tbError.Visibility = Visibility.Collapsed;
+
             if (e.Error == null)
             {
 

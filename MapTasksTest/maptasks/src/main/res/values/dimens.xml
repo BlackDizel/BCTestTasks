@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="list_task_divider_height">8dp</dimen>
+
+    <dimen name="task_title">24sp</dimen>
+</resources>

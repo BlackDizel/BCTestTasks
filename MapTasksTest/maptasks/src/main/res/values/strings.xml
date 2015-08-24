@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tasks</string>
+    <string name="action_update">Update</string>
+    <string name="title_activity_task">Task description</string>
+
+    <string name="date">unknown date</string>
+    <string name="text">no title</string>
+    <string name="longtext">no description</string>
+    <string name="location">unknown location</string>
+
+
+    <string name="price_task_description">no description</string>
+    <string name="price_task_cost">no price</string>
+
+    <string name="toast_downloaded">update complete</string>
+    <string name="toast_downloading">updating</string>
+    <string name="toast_downloading_yet">updating</string>
+    <string name="toast_downloading_error">error updating</string>
+
+
+</resources>
